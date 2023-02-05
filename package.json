@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compilesass": "node-sass CSS/main.scss CSS/style.css -w"
+    "start" : "node app.js"; 
   },
   "author": "Harsha Bhavaraju",
   "license": "ISC",
