@@ -31,6 +31,7 @@
 
    if ( Math.abs( iterationCount)<5){
     wavenumber.defaultValue=6;
+      displayequation.innerHTML= "Sin(6x +1&pi;x)"
    }
 
    
