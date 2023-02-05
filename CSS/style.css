@@ -5,7 +5,9 @@
 
 body {
   height: 100vh;
-  width: 100vw; }
+  width: 100vw; 
+  overflow:hidden;
+}
 
 .mainTitle {
   width: 100vw;
