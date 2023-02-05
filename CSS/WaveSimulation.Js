@@ -18,6 +18,7 @@
    const displayequation = document.querySelector(".displayequation");
    
    displayequation.innerHTML= "Sin(4&pi;x)";
+   displayequation.disabled = true;
    
    
    let iterationCount = canvas.width/100;
