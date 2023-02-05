@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="CSS/WaveSimulation.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header_logo">
+            <a href="/">
+                <img src="https://res.cloudinary.com/ddozgyiq2/image/upload/v1675504901/GnyaniAboutAuthor/house-white_ysdpvw.svg" alt=""class= "header_logo_svg">
+        </a>
+        </div>
+
+        <h2> Standing Wave generator</h2>
+        <div></div>
+    </header>
+
+    <div class="wave">
+    <canvas id="wave_canvas"></canvas>
+        </div>
+
+    <div class="wave_controls">
+
+        <textarea name="" id="" cols="15" rows="2" class="displayequation" >  </textarea>
+
+
+        <label for="amplitude"> Amplitude </label>
+     <input type="number" name="amplitude" id="amplitude" min="0" max="4" value="1"> 
+
+     <label for="sine">Sine</label>
+     <input type="radio" name="trigratio" id="sine" checked="true">
+
+     <label for="cosine">cosine</label>
+     <input type="radio" name="trigratio" id="cosine">
+
+     <label for="wavenumber" > Wave Number </label>  
+     <input type="number" name="wavenumber" id="wavenumber" min="1" max="10" value ="1">
+
+     <label for="omega" > Angular Frequency (in terms of &pi;) </label>
+     <input type="number" name="omega" id="omega" min="1" max="10"  value ="1"> 
+     
+     <button class="submit">Generate Wave</button>
+
+
+
+<script src="CSS/WaveSimulation.Js"></script>
+</body>
+</html>

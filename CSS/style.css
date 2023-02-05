@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  width: 100vw; }
+
+.mainTitle {
+  width: 100vw;
+  height: 50vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  padding: 20%; }
+  .mainTitleText {
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 200;
+    font-size: 400%;
+    text-transform: uppercase; }
+
+.siteEntryButton {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid white; }
+
+#menu_background {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  background-image: linear-gradient(to bottom right, #F0FFFF 10%, #0047AB 100%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 2;
+  transition: all 0.3s; }
+  #menu_background:target {
+    width: 200%;
+    height: 200%; }
+
+.menu_list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  display: block;
+  width: 25%;
+  text-align: center;
+  z-index: 3; }
+  .menu_list li a {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1%;
+    color: whitesmoke;
+    font-size: 120%;
+    transition: all 0.3s;
+    font-weight: 400;
+    text-decoration: none; }
+  .menu_list li + ul {
+    font-family: inherit;
+    visibility: hidden;
+    font-size: 0;
+    list-style: none;
+    font-weight: 400; }
+    .menu_list li + ul li {
+      font-family: inherit;
+      padding-bottom: 1%;
+      color: whitesmoke;
+      font-size: inherit; }
+  .menu_list li:hover, .menu_list li > a:hover {
+    background-color: whitesmoke;
+    color: #0047AB; }
+  .menu_list li:hover + ul {
+    visibility: visible;
+    font-size: 100%;
+    background-color: none; }
+  .menu_list ul:hover {
+    visibility: visible;
+    font-size: 100%;
+    background-color: whitesmoke;
+    color: #0047AB; }
+
+.menu_escape {
+  position: absolute;
+  top: 30%;
+  left: 70%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: whitesmoke;
+  text-align: center; }
+  .menu_escape a {
+    color: #0047AB;
+    text-decoration: none;
+    font-size: 50px; }

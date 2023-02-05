@@ -1,0 +1,117 @@
+*{
+margin:0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+
+width: 100vw;
+height: 100vh;
+
+}
+
+.header{
+    background-image: linear-gradient(to top, #0052A2, #4949FF);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.header > h2{
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;;
+    padding: 10px;
+
+   }
+
+
+.wave{
+    height: 65%;
+    margin: 1.5%;
+    width: 95%;
+    background-image: linear-gradient(to bottom, #4949FF, #0052A2) ;
+    border: 10px solid #CCCCFF;
+}   
+
+.wave_controls{
+    width: 95%;
+    height: 20%;
+    background-color: cornflowerblue;
+    margin: 0 auto;
+    
+}
+
+#wave_canvas{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.header_logo>a>img{
+
+height: 30px; 
+margin-left: 10px;
+    
+}
+
+.wave_controls{
+
+display: flex;
+align-items: center;
+justify-content: space-around;
+flex-wrap: wrap;  
+background-color: #0052A2;  
+height: fit-content;
+
+}
+
+.wave_controls>input{
+font-weight: 400;
+font-size: 15px;    
+/* font-family: 'Montserrat', sans-serif; */
+text-align: center;
+
+}
+
+.wave_controls>label{
+
+    font-size: 20px;    
+    color: #CCCCFF;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 25px 5px;
+
+
+}
+
+.wave_controls>textarea{
+    font-size: 20px;    
+    padding: 15px 0;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+
+}
+
+.submit{
+    font-size: 20px;    
+    color: #0052A2;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 10px;
+    font-weight: 400;
+
+}
+
+@media screen and (max-width: 600px) {
+    .wave_controls {
+      flex-direction: column;
+    }
+    .submit{
+        margin-top: 25px;
+    }
+
+  }
