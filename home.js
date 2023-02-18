@@ -12,7 +12,7 @@ const radius = 2*H;
 let ballArray = [];
 const ballColor= '#BFBFFF';
 let lineColor="";
-const ballCount= 50;
+const ballCount= 75;
 
 var grd = ctx.createLinearGradient(0, 0, 0, canvas.height);
 grd.addColorStop(0, "#4949FF");
