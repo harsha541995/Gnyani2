@@ -137,23 +137,23 @@ setInterval(()=>{
            
            if(distance>=d2){
                if(width>700){
-               ctx.lineWidth = 0.2*radius;
+               ctx.lineWidth = 0.1*radius;
                }else{
-            ctx.lineWidth = 0.1*radius;}
+            ctx.lineWidth = 0.2*radius;}
 
     
            }else if(distance<d2&& distance>d3){
                if(width>700){
-               ctx.lineWidth = 0.3*radius;
+               ctx.lineWidth = 0.2*radius;
                }else{
-            ctx.lineWidth = 0.2*radius;}
+            ctx.lineWidth = 0.3*radius;}
 
 
            }else if(distance<=d3){
                if(width>700){
-               ctx.lineWidth = 0.4*radius;
+               ctx.lineWidth = 0.3*radius;
                }else{
-            ctx.lineWidth = 0.3*radius;}
+            ctx.lineWidth = 0.4*radius;}
     
            }
 
