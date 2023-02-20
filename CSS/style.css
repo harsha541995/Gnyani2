@@ -6,12 +6,12 @@
 body {
   height: 100vh;
   width: 100vw; 
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .mainTitle {
-  width: 100vw;
-  height: 50vh;
+  /* width: 100vw; */
+  /* height: 30vh; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -23,14 +23,25 @@ body {
     color: white;
     font-family: 'Kaushan Script', cursive;
     font-weight: 200;
-    font-size: 400%;
-    text-transform: uppercase; }
+    font-size: 600%;
+    text-transform: uppercase; 
+    
+/* color:#E5D3B3; */
+    
+    /* background: linear-gradient(
+      to right, #E5D3B3, #987554);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+     background-clip: text; */
+
+  
+  }
 
 .siteEntryButton {
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 100%;
+  font-size: 160%;
   text-transform: uppercase;
   text-decoration: none;
   padding-bottom: 5px;
@@ -107,3 +118,18 @@ body {
     color: #0047AB;
     text-decoration: none;
     font-size: 50px; }
+
+
+    @media screen and (max-width: 600px) {
+ 
+      .mainTitleText {
+        font-size: 400%;
+        }
+
+        .siteEntryButton {
+          font-size: 100%;
+         }
+
+  
+    }
+  
