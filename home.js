@@ -130,21 +130,30 @@ setInterval(()=>{
     
          let distance = Math.sqrt(Math.pow((agent.x-other.x),2)+Math.pow((agent.y-other.y),2));
     
-
+         
  
 
          if(distance <= d1){
            
            if(distance>=d2){
-            ctx.lineWidth = 0.1*radius;
+               if(width>700){
+               ctx.lineWidth = 0.2*radius;
+               }else{
+            ctx.lineWidth = 0.1*radius;}
 
     
            }else if(distance<d2&& distance>d3){
-            ctx.lineWidth = 0.2*radius;
+               if(width>700){
+               ctx.lineWidth = 0.3*radius;
+               }else{
+            ctx.lineWidth = 0.2*radius;}
 
 
            }else if(distance<=d3){
-            ctx.lineWidth = 0.3*radius;
+               if(width>700){
+               ctx.lineWidth = 0.4*radius;
+               }else{
+            ctx.lineWidth = 0.3*radius;}
     
            }
 
