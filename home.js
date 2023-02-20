@@ -6,18 +6,46 @@ canvas.setAttribute("width",width);
 canvas.setAttribute("height",height);
 const ctx = canvas.getContext("2d");
 
-const H = 0.005*width;
+let H = 0.005*width;
 const Y = 0.005*height;
-const radius = 2*H;
 let ballArray = [];
-const ballColor= '#BFBFFF';
+// const ballColor= '#BFBFFF';
+// let ballColor = '#e6f8fb';
+let ballColor;
 let lineColor="";
-const ballCount= 75;
+let ballCount= 200;
+
+let d1=25*H;
+let d2=18.75*H;
+let d3=12.5*H;
+
+let radius = 1*H;
+
+if(width>700){
+    H=0.005*width;
+    ballCount= 200;
+    radius =0.5*H;
+    // d1=80*H;
+    // d2=40*H;
+    // d3=20*H;
+d1=20*H;
+d2=10*H;
+d3=5*H;
+}
+
+
+
+
+
+
+
 
 var grd = ctx.createLinearGradient(0, 0, 0, canvas.height);
-grd.addColorStop(0, "#4949FF");
-grd.addColorStop(1, "#0000FF");
+// grd.addColorStop(0, "#4949FF");
+// grd.addColorStop(1, "#0000FF");
 
+grd.addColorStop(0, "#00579c");
+grd.addColorStop(0.8, "#03acc1");
 
 
 class Point{
@@ -25,13 +53,12 @@ class Point{
         this.x=x;
         this.y=y;
         this.radius=size;
-        this.color = ballColor;
         this.velocityX = -0.5 + 1*Math.random();;
         this.velocityY = -0.5 + 1*Math.random();;
         }
-       drawArc(){
+       drawArc(ballColor){
         ctx.save();
-        ctx.fillStyle = this.color
+        ctx.fillStyle = ballColor;
         ctx.translate(this.x,this.y);
         ctx.beginPath()
         ctx.arc(0,0,this.radius, 0, 2*Math.PI);
@@ -75,7 +102,23 @@ setInterval(()=>{
     
         ballArray[i].x += ballArray[i].velocityX;  
         ballArray[i].y += ballArray[i].velocityY;  
-        ballArray[i].drawArc();    
+
+        if(ballArray[i].y<height/3){
+            // ballColor = "#99e4ee";
+        ballColor ="#00bcd4";
+
+           } else if(ballArray[i].y<2*height/3){
+            // ballColor = "#b3ebf2";
+            ballColor = "#80deea";
+        
+           } else {
+            ballColor = "white";
+        
+           }
+
+
+
+        ballArray[i].drawArc(ballColor);    
     
     }
     
@@ -87,27 +130,48 @@ setInterval(()=>{
     
          let distance = Math.sqrt(Math.pow((agent.x-other.x),2)+Math.pow((agent.y-other.y),2));
     
-         if(distance <= 25*H){
+
+ 
+
+         if(distance <= d1){
            
-           if(distance>=18.75*H){
+           if(distance>=d2){
             ctx.lineWidth = 0.2*radius;
-            lineColor ="#7879FF";
+
     
-           }else if(distance<18.75*H && distance>12.5*H){
+           }else if(distance<d2&& distance>d3){
             ctx.lineWidth = 0.3*radius;
-            lineColor ="#A3A3FF";
-    
-           }else if(distance<=12.5*H){
+
+
+           }else if(distance<=d3){
             ctx.lineWidth = 0.4*radius;
-            lineColor ="#BFBFFF";
     
            }
+
+
+           if(ballArray[i].y<height/3){
+            // lineColor="#99e4ee";
+         lineColor= "#00bcd4";
+
+           } else if(ballArray[i].y<2*height/3){
+            // lineColor="#b3ebf2";
+          lineColor="#80deea";
+
+           } else {
+            lineColor= "white";
+        
+           }
+
                 
             ctx.strokeStyle = lineColor; 
             ctx.beginPath();
             ctx.moveTo(agent.x, agent.y);
             ctx.lineTo(other.x,other.y);
             ctx.stroke();
+
+      
+        
+
         
          }
         }
