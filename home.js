@@ -23,7 +23,7 @@ let radius = 0.5*H;
 
 if(width>700){
     H=0.005*width;
-    ballCount= 200;
+    ballCount= 250;
     radius =0.5*H;
     // d1=80*H;
     // d2=40*H;
@@ -136,15 +136,15 @@ setInterval(()=>{
          if(distance <= d1){
            
            if(distance>=d2){
-            ctx.lineWidth = 0.2*radius;
+            ctx.lineWidth = 0.1*radius;
 
     
            }else if(distance<d2&& distance>d3){
-            ctx.lineWidth = 0.3*radius;
+            ctx.lineWidth = 0.2*radius;
 
 
            }else if(distance<=d3){
-            ctx.lineWidth = 0.4*radius;
+            ctx.lineWidth = 0.3*radius;
     
            }
 
