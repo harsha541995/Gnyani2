@@ -1,6 +1,10 @@
 const canvas = document.querySelector("#landingPageCanvas");
 const width = screen.width;
 const height = screen.height;
+const scale = window.devicePixelRatio; 
+
+
+
 
 canvas.setAttribute("width",width);
 canvas.setAttribute("height",height);
@@ -79,6 +83,7 @@ class Point{
         ctx.save();
         ctx.fillStyle = ballColor;
         ctx.translate(this.x,this.y);
+                ctx.scale(scale, scale);
         ctx.beginPath()
         ctx.arc(0,0,this.radius, 0, 2*Math.PI);
         ctx.fill();
@@ -90,7 +95,7 @@ class Point{
 
 for(i=0;i<ballCount;i++){
 
-    let size = 1+Math.random()*radius;
+    let size = 0.5+Math.random()*radius;
     // let x = size+ (width-size)*Math.random();
     // let y = size+ (height-size)*Math.random();
  
@@ -202,6 +207,7 @@ setInterval(()=>{
                 
             ctx.strokeStyle = lineColor; 
             ctx.beginPath();
+            // ctx.scale(scale,scale);
             ctx.moveTo(agent.x, agent.y);
             ctx.lineTo(other.x,other.y);
             ctx.stroke();
