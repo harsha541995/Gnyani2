@@ -17,7 +17,7 @@ let ballArray = [];
 // let ballColor = '#e6f8fb';
 let ballColor;
 let lineColor="";
-let ballCount= 250;
+let ballCount= 150;
 
 let d1=18*H;
 let d2=15*H;
