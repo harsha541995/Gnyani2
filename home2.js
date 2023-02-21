@@ -17,13 +17,13 @@ let ballArray = [];
 // let ballColor = '#e6f8fb';
 let ballColor;
 let lineColor="";
-let ballCount= 200;
+let ballCount= 150;
 
 let d1=18*H;
 let d2=15*H;
 let d3=10*H;
 
-let radius = 0.5*H;
+let radius = 0.3*H;
 
 if(width>700){
     H=0.005*width;
