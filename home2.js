@@ -27,7 +27,7 @@ let radius = 0.5*H;
 
 if(width>700){
     H=0.005*width;
-    ballCount= 200;
+    ballCount= 250;
     radius =0.5*H;
     // d1=80*H;
     // d2=40*H;
