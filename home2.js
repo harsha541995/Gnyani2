@@ -1,6 +1,6 @@
 const canvas = document.querySelector("#landingPageCanvas");
-const width = screen.width;
-const height = screen.height;
+const width = screen.availWidth;
+const height = screen.availHeight;
 
 canvas.setAttribute("width",width);
 canvas.setAttribute("height",height);
