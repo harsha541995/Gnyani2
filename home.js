@@ -15,7 +15,7 @@ let ballColor;
 let lineColor="";
 let ballCount= 300;
 
-let d1=40*H;
+let d1=30*H;
 let d2=20*H;
 let d3=10*H;
 
