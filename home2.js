@@ -2,7 +2,7 @@ const canvas = document.querySelector("#landingPageCanvas");
 const width = screen.width;
 const height = screen.height;
 const scale = window.devicePixelRatio; 
-
+let lineWidth;
 
 
 
@@ -170,23 +170,23 @@ setInterval(()=>{
            
             if(distance>=d2){
                 if(width>700){
-                ctx.lineWidth = 0.1*radius;
+                lineWidth = 0.1*radius;
                 }else{
-             ctx.lineWidth = 0.3*radius;}
+             lineWidth = 0.3*radius;}
  
      
             }else if(distance<d2&& distance>d3){
                 if(width>700){
-                ctx.lineWidth = 0.2*radius;
+                lineWidth = 0.2*radius;
                 }else{
-             ctx.lineWidth = 0.4*radius;}
+             lineWidth = 0.4*radius;}
  
  
             }else if(distance<=d3){
                 if(width>700){
-                ctx.lineWidth = 0.3*radius;
+                lineWidth = 0.3*radius;
                 }else{
-             ctx.lineWidth = 0.5*radius;}
+             lineWidth = 0.5*radius;}
      
             }
 
@@ -206,6 +206,7 @@ setInterval(()=>{
 
                 
             ctx.strokeStyle = lineColor; 
+            ctx.lineWidth = lineWidth;
             ctx.beginPath();
             // ctx.scale(scale,scale);
             ctx.moveTo(agent.x, agent.y);
