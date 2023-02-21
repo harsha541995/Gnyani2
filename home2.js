@@ -1,9 +1,10 @@
 const canvas = document.querySelector("#landingPageCanvas");
 const width = screen.width;
 const height = screen.height;
+const scale = window.devicePixelRatio; 
 
-canvas.setAttribute("width",width);
-canvas.setAttribute("height",height);
+canvas.setAttribute("width",width*scale);
+canvas.setAttribute("height",height*scale);
 const ctx = canvas.getContext("2d");
 
 let H = 0.005*width;
