@@ -19,7 +19,7 @@ let ballColor;
 let lineColor="";
 let ballCount= 150;
 
-let d1=18*H;
+let d1=25*H;
 let d2=15*H;
 let d3=10*H;
 
