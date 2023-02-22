@@ -1,129 +1,110 @@
 const canvas = document.querySelector("#landingPageCanvas");
 const width = screen.width;
 const height = screen.height;
-const scale = window.devicePixelRatio; 
-let lineWidth;
-
-
+const slope = height/width;
+const H = 0.005*width;
+const Y = 0.005*height;
+const diagnol = Math.sqrt(Math.pow(width,2)+Math.pow(height,2))
 
 canvas.setAttribute("width",width);
 canvas.setAttribute("height",height);
 const ctx = canvas.getContext("2d");
 
-let H = 0.005*width;
-const Y = 0.005*height;
+
 let ballArray = [];
-let ballColor= "white";
+let ballColor;
 let lineColor="";
-let ballCount= 200;
-
-let d1=15*H;
-let d2=7*H;
-let d3=3*H;
-
-let radius = 0.5*H;
-
-// if(width>700){
-//     H=0.005*width;
-//     ballCount= 250;
-//     radius =0.5*H;
-// d1=10*H;
-// d2=5*H;
-// d3=2.5*H;
-// }
+let ballCount= 250;
+let lineWidth;
 
 
+ballCount= 500;
+radius =0.6*H;
 
+d1=6*H;
+d2=3*H;
+d3=2*H;
 
-
-
-
-
-var grd = ctx.createLinearGradient(0, 0, 0, canvas.height);
-
-grd.addColorStop(0, "#00579c");
-grd.addColorStop(0.8, "#03acc1");
+var grd = "#00579c"
 
 
 class Point{
-    constructor(x,y){
-this.x=x;
-this.y=y;
-this.A = 10 + 10*Math.random();;
-this.w= 0.0001*(1+Math.random());
-this.k= 2*Math.PI/((Math.floor(50+100*Math.random()))*width/ballCount);
-this.size = (0.5+1*Math.random())*(radius);
-this.velocityX = -1+ 2*Math.random();
-this.ix;
+    constructor(x,y,size){
+        this.x=x;
+        this.y=y;
+        this.radius=size;
+        this.iy=0;
+        this.ix=0;
+        this.A= 20 +130*Math.random();
+        this.w = 0.005+ 0.005*Math.random();
+        this.k = (2*Math.PI)/((diagnol/ballCount)*(50+50*Math.random()));
+   
+        this.velocityX = -0.5+Math.random();
 
+        }
+       drawArc(ballColor){
+        ctx.fillStyle = ballColor;
+        ctx.beginPath()
+        ctx.arc(this.x,this.y,this.radius, 0, 2*Math.PI);
+        ctx.fill();
+
+    }
 }
 
-drawArc( color ){
-ctx.save();    
-ctx.fillStyle= color;
-ctx.beginPath();    
-ctx.arc(this.x,this.y,this.size,0,2*Math.PI)
-ctx.fill();
-ctx.restore();
-
-}
-
-}
-
+let x;
+let y;
 
 for(let i=0;i<ballCount;i++){
 
-let x=i*width/ballCount;
+    let size = 0.5+Math.random()*radius;
+ 
+    x = size+ (i*width)/ballCount;
+    y = size+ (i*height)/ballCount;
+      
 
-    ballArray.push(new Point(x,0))
-
-    let ball = ballArray[i];   
-    ball.ix = x;
-
+    ballArray.push( new Point(x,y,size));
+    ballArray[i].iy = y;
+    ballArray[i].ix = x;
 
 }
 
-let t=0
+let t=0;
+
 setInterval(()=>{
-
-    t=t+1;
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = "#00579c";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);      
-
- 
+    
+ctx.clearRect(0,0,width,height);
+    
+ctx.fillStyle = grd;    
+ctx.fillRect(0,0,width,height);
+ctx.fill();
 
 
 for(ball of ballArray){
 
+if(ball.y<-slope*ball.x || ball.y >slope*ball.x+diagnol){
 
-    if(ball.y<height/3){
-        ballColor ="#00bcd4";
-    
-           } else if(ball.y<2*height/3){
-            ballColor = "#80deea";
-        
-           } else {
-            ballColor = "white";
-        
-           }
+   ball.velocityX = -ball.velocityX; 
+
+}
+
+   ball.x += ball.velocityX; 
+ball.y = ball.A*Math.sin(ball.w*t-ball.k*(ball.x-ball.ix)) + ball.x*slope;  
+
+if(ball.y<height/3){
+ballColor ="#00bcd4";
+
+   } else if(ball.y<2*height/3){
+    ballColor = "#80deea";
+
+   } else {
+    ballColor = "white";
+
+   }
 
 
-
-    ball.x += ball.velocityX;
-    ball.y = ball.A*Math.sin((ball.w*t)+ball.k*(ball.x-ball.ix))  + ((ball.ix)/width)*(height);
-    // ball.y = height/2- ball.A*10*Math.sin(ball.w*(ball.x-ball.ix));
-    
     ball.drawArc(ballColor);
-
-if(ball.x<0 && ball.y <= (height/width)*ball.x|| ball.x>canvas.width && ball.y >= (height/width)*ball.x  ){
-
-ball.velocityX = -ball.velocityX;    
-
 }
 
-
-}
 
 
 for(i=0; i<ballArray.length;i++){
@@ -180,10 +161,6 @@ for(i=0; i<ballArray.length;i++){
         ctx.lineTo(other.x,other.y);
         ctx.stroke();
 
-  
-    
-
-    
      }
     }
 }
@@ -198,5 +175,8 @@ for(i=0; i<ballArray.length;i++){
 
 
 
-}
-,50)
+
+t=t+1;
+
+
+},50)
