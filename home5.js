@@ -90,7 +90,7 @@ setInterval(()=>{
 
     t=t+1;
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = grd;
+    ctx.fillStyle = "#00579c";
     ctx.fillRect(0, 0, canvas.width, canvas.height);      
 
  
