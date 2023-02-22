@@ -116,7 +116,7 @@ for(ball of ballArray){
     
     ball.drawArc(ballColor);
 
-if(ball.x<0 && ball.y == (height/width)*ball.x|| ball.x>canvas.width && ball.y == (height/width)*ball.x  ){
+if(ball.x<0 && ball.y <= (height/width)*ball.x|| ball.x>canvas.width && ball.y >= (height/width)*ball.x  ){
 
 ball.velocityX = -ball.velocityX;    
 
