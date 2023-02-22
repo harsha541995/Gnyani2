@@ -14,15 +14,14 @@ const ctx = canvas.getContext("2d");
 let ballArray = [];
 let ballColor;
 let lineColor="";
-let ballCount= 250;
+let ballCount= 400;
 let lineWidth;
 
 
-ballCount= 500;
 radius =0.6*H;
 
-d1=6*H;
-d2=3*H;
+d1=8*H;
+d2=4*H;
 d3=2*H;
 
 var grd = "#00579c"
@@ -35,7 +34,7 @@ class Point{
         this.radius=size;
         this.iy=0;
         this.ix=0;
-        this.A= 20 +130*Math.random();
+        this.A= 20 +100*Math.random();
         this.w = 0.005+ 0.005*Math.random();
         this.k = (2*Math.PI)/((diagnol/ballCount)*(50+50*Math.random()));
    
