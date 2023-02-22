@@ -27,7 +27,7 @@ d1=20*H;
 d2=15*H;
 d3=5*H;
 yOffset = 0.6;
-ampRange =10;
+ampRange =20;
 waveLength = ((Math.floor(10 +40*Math.random()))*height/ballCount);
 minAmp = 0;
 
@@ -49,7 +49,7 @@ class Point{
     constructor(x,y){
 this.x=x;
 this.y=y;
-this.A =  minAmp + 130*Math.random();
+this.A =  minAmp + ampRange*Math.random();
 this.w= 0.0001*(1+Math.random());
 this.k= 2*Math.PI/waveLength;
 this.size = (0.5+1*Math.random())*(radius);
