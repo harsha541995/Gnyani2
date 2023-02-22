@@ -116,11 +116,11 @@ for(ball of ballArray){
     
     ball.drawArc(ballColor);
 
-if(ball.x<0 || ball.x>canvas.width){
+// if(ball.x<0 || ball.x>canvas.width){
 
-ball.velocityX = -ball.velocityX;    
+// ball.velocityX = -ball.velocityX;    
 
-}
+// }
 
 
 }
