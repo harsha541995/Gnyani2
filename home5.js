@@ -23,9 +23,9 @@ let radius = 0.5*H;
 
     ballCount= 200;
     radius =1.25*H;
-d1=15*H;
-d2=5*H;
-d3=2.5*H;
+d1=20*H;
+d2=15*H;
+d3=5*H;
 yOffset = 0.6;
 ampRange =10;
 waveLength = ((Math.floor(100+200*Math.random()))*height/ballCount);
