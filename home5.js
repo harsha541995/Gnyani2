@@ -59,12 +59,12 @@ this.ix;
 }
 
 drawArc( color ){
-ctx.save();    
+  
 ctx.fillStyle= color;
 ctx.beginPath();    
 ctx.arc(this.x,this.y,this.size,0,2*Math.PI)
 ctx.fill();
-ctx.restore();
+
 
 }
 
