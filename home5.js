@@ -28,7 +28,7 @@ d2=15*H;
 d3=5*H;
 yOffset = 0.6;
 ampRange =10;
-waveLength = ((Math.floor(100 +100*Math.random()))*height/ballCount);
+waveLength = ((Math.floor(10 +40*Math.random()))*height/ballCount);
 minAmp = 0;
 
 
