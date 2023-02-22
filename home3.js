@@ -119,24 +119,16 @@ for(i=0; i<ballArray.length;i++){
      if(distance <= d1 ){
        
         if(distance>=d2){
-            if(width>700){
             lineWidth = 0.1*radius;
-            }else{
-         lineWidth = 0.2*radius;}
 
  
         }else if(distance<d2&& distance>d3){
-            if(width>700){
-            lineWidth = 0.2*radius;
-            }else{
-         lineWidth = 0.3*radius;}
+            lineWidth = 0.3*radius;
+
 
 
         }else if(distance<=d3){
-            if(width>700){
-            lineWidth = 0.3*radius;
-            }else{
-         lineWidth = 0.4*radius;}
+            lineWidth = 0.4*radius;
  
         }
 
@@ -163,17 +155,6 @@ for(i=0; i<ballArray.length;i++){
      }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 t=t+1;
 
