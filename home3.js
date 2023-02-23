@@ -14,7 +14,7 @@ const ctx = canvas.getContext("2d");
 let ballArray = [];
 let ballColor;
 let lineColor="";
-let ballCount= 400;
+let ballCount= 500;
 let lineWidth;
 
 
