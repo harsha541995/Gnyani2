@@ -21,14 +21,14 @@ let ballCount= 200;
 let radius = 0.5*H;
 
 
-    ballCount= 200;
+    ballCount= 220;
     radius =1.25*H;
-d1=20*H;
-d2=15*H;
-d3=5*H;
+d1=15*H;
+d2=5*H;
+d3=2.5*H;
 yOffset = 0.6;
-ampRange =60;
-waveLength = ((Math.floor(10 +40*Math.random()))*height/ballCount);
+ampRange =50;
+// waveLength = ((Math.floor(100+200*Math.random()))*height/ballCount);
 minAmp = 0;
 
 
@@ -39,19 +39,24 @@ minAmp = 0;
 
 
 
-var grd = ctx.createLinearGradient(0, 0, 0, canvas.height);
+var grd = "#00579c";
+var grd = "#203354";
+// var grd = "#182547";
 
-grd.addColorStop(0, "#00579c");
-grd.addColorStop(0.8, "#03acc1");
+
+// ctx.createLinearGradient(0, 0, 0, canvas.height);
+
+// grd.addColorStop(0, "#00579c");
+// grd.addColorStop(0.8, "#03acc1");
 
 
 class Point{
     constructor(x,y){
 this.x=x;
 this.y=y;
-this.A =  minAmp + ampRange*Math.random();
-this.w= 0.0001*(1+Math.random());
-this.k= 2*Math.PI/waveLength;
+// this.A =  minAmp + 130*Math.random();
+// this.w= 0.0001*(1+Math.random());
+// this.k= 2*Math.PI/waveLength;
 this.size = (0.5+1*Math.random())*(radius);
 this.velocityY = -1+ 2*Math.random();
 this.ix;
@@ -59,12 +64,12 @@ this.ix;
 }
 
 drawArc( color ){
-  
+ctx.save();    
 ctx.fillStyle= color;
 ctx.beginPath();    
 ctx.arc(this.x,this.y,this.size,0,2*Math.PI)
 ctx.fill();
-
+ctx.restore();
 
 }
 
@@ -79,6 +84,10 @@ let y=i*height/ballCount;
 
     let ball = ballArray[i];   
     ball.iy = y;
+    ball.A =  minAmp + ampRange*Math.sin(i*(2*Math.PI/(ballCount/6)));
+    ball.w= 0.0001*(1+Math.sin(i*(2*Math.PI/(ballCount/6))));
+    ball.k= 2*Math.PI/((150+(Math.sin(i*(2*Math.PI/(ballCount/6))))*height/ballCount));
+
 
 
 }
@@ -90,7 +99,7 @@ setInterval(()=>{
 
     t=t+1;
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = "#00579c";
+    ctx.fillStyle = grd;
     ctx.fillRect(0, 0, canvas.width, canvas.height);      
 
  
@@ -182,6 +191,7 @@ for(i=0; i<ballArray.length;i++){
         ctx.lineWidth = lineWidth;
         ctx.beginPath();
         ctx.moveTo(agent.x, agent.y);
+        // ctx.bezierCurveTo(((agent.x+other.x)/2)+2 , ((agent.y+other.y)/2)+2, ((agent.x+other.x)/2)-2, ((agent.y+other.y)/2)-2, other.x,other.y);
         ctx.lineTo(other.x,other.y);
         ctx.stroke();
 
