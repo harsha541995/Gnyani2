@@ -97,7 +97,7 @@ ctx.fill();
 
 for(ball of ballArray){
 
-if(ball.y<-slope*ball.x || ball.y >slope*ball.x+diagnol){
+if(ball.y>-slope*ball.x || ball.y <slope*ball.x+diagnol){
 
    ball.velocityX = -ball.velocityX; 
 
