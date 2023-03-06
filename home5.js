@@ -40,7 +40,6 @@ minAmp = 0;
 
 
 var grd = "#00579c";
-var grd = "#203354";
 // var grd = "#182547";
 
 
