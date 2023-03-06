@@ -18,21 +18,16 @@ body {
   transform: translate(-50%, -50%);
   z-index: 1;
   text-align: center;
-  padding: 20%; }
+  padding: 10% 0; 
+  
+}
   .mainTitleText {
     color: white;
     font-family: 'Kaushan Script', cursive;
     font-weight: 200;
     font-size: 600%;
-    text-transform: uppercase; 
-    
-/* color:#E5D3B3; */
-    
-    /* background: linear-gradient(
-      to right, #E5D3B3, #987554);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-     background-clip: text; */
+    text-transform: uppercase;     
+    letter-spacing: 15px;
 
   
   }
@@ -45,7 +40,9 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   padding-bottom: 5px;
-  border-bottom: 2px solid white; }
+  border-bottom: 2px solid white; 
+ letter-spacing: 5px;
+}
 
 #menu_background {
   position: absolute;
@@ -120,6 +117,8 @@ body {
     font-size: 50px; }
 
 
+
+
     @media screen and (max-width: 600px) {
  
       .mainTitleText {
@@ -132,4 +131,6 @@ body {
 
   
     }
+
+
   
