@@ -22,7 +22,7 @@
         </a>
         </div>
 
-        <h2> Standing Wave generator</h2>
+        <h2> Wave generator</h2>
         <div></div>
     </header>
 
@@ -30,30 +30,44 @@
     <canvas id="wave_canvas"></canvas>
         </div>
 
+        <div class="displayequation"></div> 
+
     <div class="wave_controls">
 
-        <textarea name="" id="" cols="15" rows="2" class="displayequation" >  </textarea>
+        <!-- <textarea name="" id="" cols="15" rows="2" class="displayequation" disabled >  </textarea> -->
 
-
+          
+        <div class="input">
         <label for="amplitude"> Amplitude </label>
      <input type="number" name="amplitude" id="amplitude" min="0" max="4" value="1"> 
+    </div>
 
-     <label for="sine">Sine</label>
+    <div class="input">
+        <label for="sine">Sine</label>
      <input type="radio" name="trigratio" id="sine" checked="true">
+    </div>
 
-     <label for="cosine">cosine</label>
+    <div class="input">
+        <label for="cosine">cosine</label>
      <input type="radio" name="trigratio" id="cosine">
+    </div>
 
-     <label for="wavenumber" > Wave Number </label>  
+    <div class="input">
+        <label for="wavenumber" > Wave Number </label>  
      <input type="number" name="wavenumber" id="wavenumber" min="1" max="10" value ="1">
+    </div>
 
-     <label for="omega" > Angular Frequency (in terms of &pi;) </label>
+    <div class="input">
+        <label for="omega" > Angular Frequency </label>
      <input type="number" name="omega" id="omega" min="1" max="10"  value ="1"> 
-     
+    </div>
+    
+        <div class="input">
      <button class="submit">Generate Wave</button>
+</div>
 
+</div>
 
-
-<script src="CSS/WaveSimulation.Js"></script>
+<script src="CSS/WaveSimulation2.Js"></script>
 </body>
 </html>
