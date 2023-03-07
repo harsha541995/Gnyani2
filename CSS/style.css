@@ -73,16 +73,18 @@ body {
   .menu_list li a {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
-    padding: 1% 5%;
+    padding: 15px 25px;
     color: whitesmoke;
     color: #00579c;
-    font-size: 130%;
+    font-size: 18px;
     transition: all 0.3s;
     font-weight: 400;
     text-decoration: none; 
+    display: inline-block;
+    width: 300px;
     /* letter-spacing: 2px; */
     border-bottom: 1px solid #00579c;
-    border-radius: 5px;
+    /* border-radius: 5px; */
   }
   .menu_list li + ul {
     font-family: inherit;
