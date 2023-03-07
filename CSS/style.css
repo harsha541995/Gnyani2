@@ -49,7 +49,8 @@ body {
   position: absolute;
   top: -50%;
   left: -50%;
-  background-image: linear-gradient(to bottom right, #F0FFFF 10%, #0047AB 100%);
+  /* background-image: linear-gradient(to bottom right, #F0FFFF 10%, #0047AB 100%); */
+  background-color: whitesmoke;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -66,41 +67,57 @@ body {
   transform: translate(-50%, -50%);
   list-style: none;
   display: block;
-  width: 25%;
+  width: 50%;
   text-align: center;
   z-index: 3; }
   .menu_list li a {
-    display: block;
+    display: inline-block;
     font-family: 'Montserrat', sans-serif;
-    padding: 1%;
+    padding: 1% 5%;
     color: whitesmoke;
-    font-size: 120%;
+    color: #00579c;
+    font-size: 130%;
     transition: all 0.3s;
     font-weight: 400;
-    text-decoration: none; }
+    text-decoration: none; 
+    /* letter-spacing: 2px; */
+    border-bottom: 1px solid #00579c;
+    border-radius: 5px;
+  }
   .menu_list li + ul {
     font-family: inherit;
     visibility: hidden;
     font-size: 0;
     list-style: none;
-    font-weight: 400; }
+    font-weight: 600; }
     .menu_list li + ul li {
       font-family: inherit;
       padding-bottom: 1%;
-      color: whitesmoke;
+      /* color: whitesmoke; */
+      color:#00579c;
       font-size: inherit; }
-  .menu_list li:hover, .menu_list li > a:hover {
-    background-color: whitesmoke;
-    color: #0047AB; }
+  /* .menu_list li:hover,  */
+  
+  .menu_list li > a:hover {
+    color: whitesmoke;
+    background-color:#0047AB ; 
+    background-color: #8AB0BF;
+    border: none;
+  }
   .menu_list li:hover + ul {
     visibility: visible;
     font-size: 100%;
     background-color: none; }
+
   .menu_list ul:hover {
     visibility: visible;
     font-size: 100%;
-    background-color: whitesmoke;
-    color: #0047AB; }
+    /* color: whitesmoke; */
+    /* background-color:#0047AB ;  */
+    
+  }
+  
+  
 
 .menu_escape {
   position: absolute;
@@ -111,9 +128,13 @@ body {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   background-color: whitesmoke;
-  text-align: center; }
+  text-align: center; 
+  box-shadow: -5px 5px 10px 1px rgba(0,0,0,0.3);
+
+}
   .menu_escape a {
-    color: #0047AB;
+    /* color: #0047AB; */
+color:"#00579c";
     text-decoration: none;
     font-size: 50px; }
 
