@@ -102,8 +102,7 @@ body {
   
   .menu_list li > a:hover {
     color: whitesmoke;
-    background-color:#0047AB ; 
-    background-color: #8AB0BF;
+    background-color: #00579c;
     border: none;
   }
   .menu_list li:hover + ul {
