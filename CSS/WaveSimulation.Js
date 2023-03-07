@@ -127,11 +127,11 @@ setInterval(()=>{
     
     if(S){
     
-    point.y = A*Math.sin(k*point.x - w*t) 
+    point.y = A*Math.sin(k*point.x + w*t) 
     
     }else{
     
-        point.y =A*Math.cos(k*point.x - w*t) 
+        point.y =A*Math.cos(k*point.x + w*t) 
     
     }
     
