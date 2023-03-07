@@ -1,98 +1,109 @@
-   const canvas = document.querySelector("#wave_canvas");
-   const container = document.querySelector(".wave");
-   const ctx = canvas.getContext("2d");
+const canvas = document.querySelector("#wave_canvas");
+const container = document.querySelector(".wave");
+const ctx = canvas.getContext("2d");
 
-   const width = container.clientWidth;
-   const height = container.clientHeight;
+const width = container.clientWidth;
+const height = container.clientHeight;
 
-   canvas.setAttribute("width", width);
-   canvas.setAttribute("height", height);
-
-   
-   const amplitude = document.querySelector("#amplitude");
-   const sine = document.querySelector("#sine");
-   const cosine = document.querySelector("#cosine");
-   const wavenumber = document.querySelector("#wavenumber");
-   const omega = document.querySelector("#omega");
-   const submit = document.querySelector(".submit");
-   const displayequation = document.querySelector(".displayequation");
-   
-   displayequation.innerHTML= "Sin(4&pi;x)";
-   displayequation.disabled = true;
-   
-   
-   let iterationCount = canvas.width/100;
-   const H = canvas.width*0.005;
-   const radius = H;
-   let t = 0;
-   let clickStatus;
+canvas.setAttribute("width", width);
+canvas.setAttribute("height", height);
 
 
-   console.log(iterationCount);
+const amplitude = document.querySelector("#amplitude");
+const sine = document.querySelector("#sine");
+const cosine = document.querySelector("#cosine");
+const wavenumber = document.querySelector("#wavenumber");
+const omega = document.querySelector("#omega");
+const submit = document.querySelector(".submit");
+const displayequation = document.querySelector(".displayequation");
 
-   if ( Math.abs( iterationCount)<5){
-    wavenumber.defaultValue=6;
-      displayequation.innerHTML= "Sin(6x+1&pi;t)"
-   }
+displayequation.innerHTML= "Sin(x + t)";
 
-   
-   class Point{
-    constructor(x,y){
-        this.x = x;
-        this.y = y;
-        this.radius = radius;  
-    }
-      drawArc(){
-     
-        ctx.save(); 
-        ctx.translate(canvas.width/2, canvas.height/2);
-       ctx.fillStyle= "white";
-       ctx.beginPath();
-       ctx.arc(this.x,this.y, radius,0,2*Math.PI);
-       ctx.fill();
-       ctx.restore();
-      }   }
 
-const point = new Point(-canvas.width/2, 100*Math.cos(10*((t)/50)))
+let iterationCount = canvas.width/50;
+const H = canvas.width*0.005;
+let t = 0;
+let clickStatus;
+let lineWidth;
+let radius;
+let AmplitudeMultiplicationFactor;
+let FrequencyMultiplicationFactor = 20;
 
-let attributes = [];
-let i=-1;
-
-class Attributes{
-    constructor(amplitude,angle,k,omega){
-        this.amplitude = amplitude;
-        this.angle = angle;
-        this.k = k;
-        this.omega = omega;  
-    }
+if ( Math.abs( iterationCount)<5){
+ wavenumber.defaultValue=6;
 }
+
+
+if(screen.width>700){
+
+    lineWidth=3;
+    radius = 1.5*H;
+    AmplitudeMultiplicationFactor = 40;
+
+}
+else{
+    lineWidth=2;
+    radius = 3*H;
+    AmplitudeMultiplicationFactor = 20;
+
+
+}
+
+let A = AmplitudeMultiplicationFactor*amplitude.value;
+let S = sine.checked;
+let C = cosine.checked;
+let k = wavenumber.value;
+let w= omega.value/FrequencyMultiplicationFactor;
+
+
+
+class Point{
+ constructor(x,y){
+     this.x = x;
+     this.y = y;
+     this.radius = radius;  
+     this.absx = x;
+ }
+   drawArc(){
+  
+     ctx.save(); 
+     ctx.translate(canvas.width/2, canvas.height/2);
+     ctx.strokeStyle= "#00579c";
+     ctx.lineWidth = lineWidth;
+    ctx.beginPath();
+    ctx.arc(this.x,this.y, radius,0,2*Math.PI);
+    ctx.stroke();
+    ctx.restore();
+   }   }
+
+   const points = [];
+  
+
+for(let i=0;i<iterationCount+1;i++){
+
+ points.push(new Point( (canvas.width/iterationCount)*i -(canvas.width/2), canvas.height/2));
+
+}
+
 
 
 
 submit.addEventListener("click", ()=>{
 
-    console.log("yes");
+ A = AmplitudeMultiplicationFactor*amplitude.value;
+ S = sine.checked;
+ C = cosine.checked;
+ k = wavenumber.value;
+ w= omega.value/FrequencyMultiplicationFactor;
 
+ if(S){
+    displayequation.innerHTML= `${A/AmplitudeMultiplicationFactor}Sin(${k}x+${w*FrequencyMultiplicationFactor}t)`;
 
-    const A = amplitude.value;
-    const S = sine.checked
-    const C = cosine.checked;
-    const k = wavenumber.value;
-    const w= omega.value;
-
-    if(sine.checked){
-        displayequation.innerHTML= `${A}Sin(${k}x+${w}&pi;t)`;
-        attributes.push( new Attributes(A,"sine",k,w));
-        i++;
-
-    }
-    else if(cosine.checked){
-        displayequation.innerHTML= `${A}Cos(${k}x+${w}&pi;t)`;
-        attributes.push( new Attributes(A,"cosine",k,w));
-        i++;
-             
-    }
-    console.log(attributes[i]);
+}
+else{
+    displayequation.innerHTML= `${A/AmplitudeMultiplicationFactor}Cos(${k}x+${w*FrequencyMultiplicationFactor}t)`;
+         
+}
 
 
 })
@@ -104,64 +115,189 @@ submit.addEventListener("click", ()=>{
 
 setInterval(()=>{
 
-ctx.clearRect(0,0,canvas.width, canvas.height);
-
-ctx.strokeStyle = "#D9E4EC";
-ctx.lineWidth = 2;
-ctx.beginPath();
-ctx.moveTo(0,canvas.height/2);
-ctx.lineTo(canvas.width, canvas.height/2);
-ctx.stroke();
- 
-
-if (attributes.length>0){
-
-    if(attributes[i].angle=="sine"){
-        point.y = (attributes[i].amplitude)*40*(Math.sin( (attributes[i].k)*0.005*point.x+ (1*((Math.PI/(width*8))*point.x*(attributes[i].omega)))));
-        point.x = point.x+ iterationCount; 
-        point.drawArc();  
-        console.log(attributes[i].A);
-
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+    ctx.strokeStyle = "#D9E4EC";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(0,canvas.height/2);
+    ctx.lineTo(canvas.width, canvas.height/2);
+    ctx.stroke();
+    
+    for(point of points){
+    
+    if(S){
+    
+    point.y = A*Math.sin(k*point.x - w*t) 
+    
     }else{
-
-        point.y = attributes[i].amplitude*40*(Math.cos( attributes[i].k*0.005*point.x+ (1*((Math.PI/(width*8))*point.x*(attributes[i].omega)))));
-        point.x = point.x+ iterationCount;
-        point.drawArc();
-
+    
+        point.y =A*Math.cos(k*point.x - w*t) 
+    
     }
+    
+point.drawArc();
+
+    
+    }
+    
+    
+    
+    t++;
+    
+    
+    }, 50)
+
+
+
+
+const canvas = document.querySelector("#wave_canvas");
+const container = document.querySelector(".wave");
+const ctx = canvas.getContext("2d");
+
+const width = container.clientWidth;
+const height = container.clientHeight;
+
+canvas.setAttribute("width", width);
+canvas.setAttribute("height", height);
+
+
+const amplitude = document.querySelector("#amplitude");
+const sine = document.querySelector("#sine");
+const cosine = document.querySelector("#cosine");
+const wavenumber = document.querySelector("#wavenumber");
+const omega = document.querySelector("#omega");
+const submit = document.querySelector(".submit");
+const displayequation = document.querySelector(".displayequation");
+
+displayequation.innerHTML= "Sin(x + t)";
+
+
+let iterationCount = canvas.width/50;
+const H = canvas.width*0.005;
+let t = 0;
+let clickStatus;
+let lineWidth;
+let radius;
+let AmplitudeMultiplicationFactor;
+let FrequencyMultiplicationFactor = 20;
+
+if ( Math.abs( iterationCount)<5){
+ wavenumber.defaultValue=6;
+}
+
+
+if(screen.width>700){
+
+    lineWidth=3;
+    radius = 1.5*H;
+    AmplitudeMultiplicationFactor = 40;
 
 }
 else{
-   
-    if (Math.abs( iterationCount)<5){
+    lineWidth=2;
+    radius = 3*H;
+    AmplitudeMultiplicationFactor = 20;
 
-        point.y = 1*40*(Math.sin(0.005*6*point.x+(1*((Math.PI/(8*width))*point.x))));
-        point.x = point.x+ iterationCount;
-        point.drawArc(); 
 
-    }else{
+}
 
-    point.y = 1*40*(Math.sin(0.005*point.x+(1*((Math.PI/(8*width))*point.x))));
-    point.x = point.x+ iterationCount;
-    point.drawArc(); 
-    }   
+let A = AmplitudeMultiplicationFactor*amplitude.value;
+let S = sine.checked;
+let C = cosine.checked;
+let k = wavenumber.value;
+let w= omega.value/FrequencyMultiplicationFactor;
+
+
+
+class Point{
+ constructor(x,y){
+     this.x = x;
+     this.y = y;
+     this.radius = radius;  
+     this.absx = x;
+ }
+   drawArc(){
+  
+     ctx.save(); 
+     ctx.translate(canvas.width/2, canvas.height/2);
+     ctx.strokeStyle= "#00579c";
+     ctx.lineWidth = lineWidth;
+    ctx.beginPath();
+    ctx.arc(this.x,this.y, radius,0,2*Math.PI);
+    ctx.stroke();
+    ctx.restore();
+   }   }
+
+   const points = [];
+  
+
+for(let i=0;i<iterationCount+1;i++){
+
+ points.push(new Point( (canvas.width/iterationCount)*i -(canvas.width/2), canvas.height/2));
 
 }
 
 
 
 
-  
-    if(point.x>canvas.width/2 || point.x< -canvas.width/2){
-        iterationCount = -iterationCount;
+submit.addEventListener("click", ()=>{
+
+ A = AmplitudeMultiplicationFactor*amplitude.value;
+ S = sine.checked;
+ C = cosine.checked;
+ k = wavenumber.value;
+ w= omega.value/FrequencyMultiplicationFactor;
+
+ if(S){
+    displayequation.innerHTML= `${A/AmplitudeMultiplicationFactor}Sin(${k}x+${w*FrequencyMultiplicationFactor}t)`;
+
+}
+else{
+    displayequation.innerHTML= `${A/AmplitudeMultiplicationFactor}Cos(${k}x+${w*FrequencyMultiplicationFactor}t)`;
+         
+}
+
+
+})
+
+
+
+
+
+
+setInterval(()=>{
+
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+    ctx.strokeStyle = "#D9E4EC";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(0,canvas.height/2);
+    ctx.lineTo(canvas.width, canvas.height/2);
+    ctx.stroke();
+    
+    for(point of points){
+    
+    if(S){
+    
+    point.y = A*Math.sin(k*point.x - w*t) 
+    
+    }else{
+    
+        point.y =A*Math.cos(k*point.x - w*t) 
+    
     }
-     
+    
+point.drawArc();
 
+    
+    }
+    
+    
+    
     t++;
-
-
-
-}, 50)
+    
+    
+    }, 50)
 
 
 
