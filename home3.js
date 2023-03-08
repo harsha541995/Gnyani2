@@ -9,6 +9,32 @@ const diagnol = Math.sqrt(Math.pow(width,2)+Math.pow(height,2))
 canvas.setAttribute("width",width);
 canvas.setAttribute("height",height);
 const ctx = canvas.getContext("2d");
+const menuEscape = document.querySelector(".menu_escape");
+const menu = document.querySelector("#menu_background");
+const siteEntryButton = document.querySelector(".siteEntryButton");
+
+
+siteEntryButton.addEventListener("click",()=>{
+
+    menu.style.width ="200%";
+    menu.style.height ="200%";
+    console.log("click");
+    
+    })
+
+
+
+menuEscape.addEventListener("click",()=>{
+
+menu.style.width ="100px";
+menu.style.height ="100px";
+console.log("click");
+
+})
+
+
+
+
 
 
 let ballArray = [];
