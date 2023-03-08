@@ -4,17 +4,17 @@ padding: 0;
 box-sizing: border-box;
 }
 
-  a{
-    background-color: transparent;
-  }
-
-
 body{
 
 width: 100vw;
 height: 100vh;
 
 }
+
+a{
+    -webkit-tap-highlight-color: transparent;
+    }
+
 
 .header{
     background-color: #00579c;
