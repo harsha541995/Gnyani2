@@ -9,6 +9,15 @@ body {
   overflow: hidden;
 }
 
+.bodydiv{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+overflow: hidden;
+
+}
+
+
 a{
   -webkit-tap-highlight-color: transparent;
 
@@ -41,6 +50,7 @@ a{
   
   }
 
+
 .siteEntryButton {
   color: white;
   font-family: 'Montserrat', sans-serif;
@@ -58,16 +68,17 @@ a{
   position: absolute;
   top: -50%;
   left: -50%;
-  /* background-image: linear-gradient(to bottom right, #F0FFFF 10%, #0047AB 100%); */
   background-color: whitesmoke;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   z-index: 2;
   transition: all 0.3s ease-in; }
-  #menu_background:target {
-    width: 200%;
-    height: 200%; }
+
+
+
+
+
 
 .menu_list {
   position: absolute;
