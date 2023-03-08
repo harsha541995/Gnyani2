@@ -3,15 +3,19 @@
   padding: 0;
   box-sizing: border-box; }
 
-  a{
-    background-color: transparent;
-  }
-
 body {
   height: 100vh;
   width: 100vw; 
   overflow: hidden;
 }
+
+a{
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+
+
 
 .mainTitle {
   /* width: 100vw; */
@@ -47,6 +51,7 @@ body {
   padding-bottom: 10px;
   border-bottom: 2px solid white; 
  letter-spacing: 5px;
+
 }
 
 #menu_background {
@@ -59,7 +64,7 @@ body {
   height: 100px;
   border-radius: 50%;
   z-index: 2;
-  transition: all 0.3s; }
+  transition: all 0.3s ease-in; }
   #menu_background:target {
     width: 200%;
     height: 200%; }
@@ -74,11 +79,10 @@ body {
   width: 50%;
   text-align: center;
   z-index: 3; }
-  .menu_list li a {
+  .menu_list li a{
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
     padding: 15px 25px;
-    color: whitesmoke;
     color: #00579c;
     font-size: 18px;
     transition: all 0.3s;
@@ -89,6 +93,7 @@ body {
     /* letter-spacing: 2px; */
     border-bottom: 1px solid #00579c;
     /* border-radius: 5px; */
+
   }
   .menu_list li + ul {
     font-family: inherit;
@@ -104,11 +109,21 @@ body {
       font-size: inherit; }
   /* .menu_list li:hover,  */
   
-  .menu_list li > a:hover {
+  .menu_list li > a:hover{
     color: whitesmoke;
     background-color: #00579c;
     border: none;
   }
+
+  .menu_list li > a:active{
+    color: whitesmoke;
+    background-color: #00579c;
+    border: none;
+  }
+
+
+  
+
   .menu_list li:hover + ul {
     visibility: visible;
     font-size: 100%;
@@ -117,8 +132,6 @@ body {
   .menu_list ul:hover {
     visibility: visible;
     font-size: 100%;
-    /* color: whitesmoke; */
-    /* background-color:#0047AB ;  */
     
   }
   
@@ -135,6 +148,7 @@ body {
   background-color: whitesmoke;
   text-align: center; 
   box-shadow: -5px 5px 10px 1px rgba(0,0,0,0.3);
+
 
 }
   .menu_escape a {
@@ -158,5 +172,3 @@ color:#00579c;
   
     }
 
-
-  
