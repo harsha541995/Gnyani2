@@ -9,6 +9,31 @@ let lineWidth;
 canvas.setAttribute("width",width);
 canvas.setAttribute("height",height);
 const ctx = canvas.getContext("2d");
+const menuEscape = document.querySelector(".menu_escape");
+const menu = document.querySelector("#menu_background");
+const siteEntryButton = document.querySelector(".siteEntryButton");
+
+
+siteEntryButton.addEventListener("click",()=>{
+
+    menu.style.width ="200%";
+    menu.style.height ="200%";
+    console.log("click");
+    
+    })
+
+
+
+menuEscape.addEventListener("click",()=>{
+
+menu.style.width ="100px";
+menu.style.height ="100px";
+console.log("click");
+
+})
+
+
+
 
 let H = 0.005*width;
 const Y = 0.005*height;
@@ -40,6 +65,7 @@ minAmp = 0;
 
 
 var grd = "#00579c";
+// var grd = "#203354";
 // var grd = "#182547";
 
 
