@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400&display=swap" rel="stylesheet">   
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="CSS/buildYourMolecule.css">
+
+    <title>Build Your Molecule</title>
+</head>
+<body>
+    
+ <header class="header">
+    <a href="/" class="homeIcon">
+<img src="https://res.cloudinary.com/ddozgyiq2/image/upload/v1675504901/GnyaniAboutAuthor/house-white_ysdpvw.svg" alt="" >
+</a>
+<h2 class="headerText">
+BUILD YOUR MOLECULE
+</h2>
+ </header>   
+
+ <main>
+
+<div class="bondWindow">
+    <div class="singleBond bond">
+    <div class="bondline bondLineSingle"></div>
+    </div>
+    <div class="doubleBond bond">
+        <div class="bondline "></div>
+        <div class="bondline "></div>
+
+    </div>
+    <div class="tripleBond bond">
+        <div class="bondline "></div>
+        <div class="bondline "></div>
+        <div class="bondline "></div>
+
+    </div>
+</div> 
+
+<div class="elementWindow">
+    <div class="carbon element">
+C
+    </div>
+    <div class="hydrogen element">
+H
+    </div>
+    <div class="oxygen element">
+O
+    </div>
+    <div class="nitrogen element">
+N
+    </div>
+    <div class="chlorine element">
+F
+    </div>
+    <div class="bromine element">
+I
+    </div>
+
+</div>
+
+
+<div class="canvasWindow">
+    <canvas id="canvas">
+
+    </canvas>
+</div>
+
+
+</main>
+
+<div class="buttons">
+
+<a class="validate button" href="/moleculeFormula">
+validate
+</a>
+
+<!-- <button class="select button">
+    select
+    </button> -->
+
+<!-- <button class="delete button">
+delete
+</button> -->
+
+<button class="deleteAll button">
+delete all
+</button>
+
+</div>
+
+<script src="CSS/buildYourMolecule.js"></script>
+
+</body>
+</html>
