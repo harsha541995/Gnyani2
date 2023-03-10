@@ -22,3 +22,10 @@ app.get("/AbouttheAuthor",
 (req,res)=>{
     res.sendFile(__dirname +"/Pages/physics/Waves and Vibrations/Waves combination simulations/WaveSimulation.html");
     } )
+
+
+    app.get("/buildYourMolecule",(req,res)=>{
+
+        res.sendFile(__dirname +"/buildYourMolecule.html");
+
+    })
