@@ -122,19 +122,22 @@ ul, li, a{
 .menu_li+ul>li>a{
   height: 0;
   width: 0;
-  font-size: 0; 
+  font-size: 0;
+  border:none;
 }
 
 .menu_li:hover + ul>li>a{
   height: 50px;
   width: 260px;
-  font-size: 18px; 
+  font-size: 18px;
+border-bottom : 1px solid #00579c;
 }
 
 .menu_li+ul>li>a:hover{
   height: 50px;
   width: 260px;
   font-size: 18px; 
+border-bottom : 1px solid #00579c;
 }
 
 .menu_li:hover + ul{
