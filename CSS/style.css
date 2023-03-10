@@ -89,64 +89,76 @@ a{
   display: block;
   width: 50%;
   text-align: center;
-  z-index: 3; }
-  .menu_list li a{
-    display: inline-block;
-    font-family: 'Montserrat', sans-serif;
-    padding: 15px 25px;
-    color: #00579c;
-    font-size: 18px;
-    transition: all 0.3s;
-    font-weight: 400;
-    text-decoration: none; 
-    display: inline-block;
-    width: 300px;
-    /* letter-spacing: 2px; */
-    border-bottom: 1px solid #00579c;
-    /* border-radius: 5px; */
+  z-index: 3; 
+transition: all 0.3s;
 
-  }
-  .menu_list li + ul {
-    font-family: inherit;
-    visibility: hidden;
-    font-size: 0;
-    list-style: none;
-    font-weight: 600; }
-    .menu_list li + ul li {
-      font-family: inherit;
-      padding-bottom: 1%;
-      /* color: whitesmoke; */
-      color:#00579c;
-      font-size: inherit; }
-  /* .menu_list li:hover,  */
+}
   
-  .menu_list li > a:hover{
-    color: whitesmoke;
-    background-color: #00579c;
-    border: none;
-  }
+li a{
+  font-family:  'Montserrat', sans-serif;
+text-decoration: none;
+color: #00579c;
+height: 50px;
+display: inline-block;
+width: 260px;
+padding: 15px ;
+font-size: 18px; 
+/* transition: all 0.3s; */
+}
 
-  .menu_list li > a:active{
-    color: whitesmoke;
-    background-color: #00579c;
-    border: none;
-  }
+ul, li, a{
+  transition: all 0.3s;
+}
 
 
-  
+.menu_li+ul{
+  height: 0;
+}
+.menu_li+ul>li{
+  height: 0;
+}
 
-  .menu_list li:hover + ul {
-    visibility: visible;
-    font-size: 100%;
-    background-color: none; }
+.menu_li+ul>li>a{
+  height: 0;
+  width: 0;
+  font-size: 0; 
+}
 
-  .menu_list ul:hover {
-    visibility: visible;
-    font-size: 100%;
-    
-  }
-  
-  
+.menu_li:hover + ul>li>a{
+  height: 50px;
+  width: 260px;
+  font-size: 18px; 
+}
+
+.menu_li+ul>li>a:hover{
+  height: 50px;
+  width: 260px;
+  font-size: 18px; 
+}
+
+.menu_li:hover + ul{
+  height: 50px;
+
+}
+
+.menu_li+ul:hover{
+  height: 50px;
+}
+
+
+
+
+a:hover{
+  background-color: #00579c;
+  color: whitesmoke;
+}
+
+.menu_escape a:hover{
+  background-color: transparent;
+}
+
+
+
 
 .menu_escape {
   position: absolute;
