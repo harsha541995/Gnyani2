@@ -32,6 +32,8 @@ let bromineColor = "#E8953E";
 let chlorineColor = "#726FA3";
 let themeColor = "#00579c";
 let bondColor = "#ADD8E6";
+bondColor = "#338BA8";
+
 let pair = [];
 let pairValencyCheck = false;
 colorArray = [carbonColor, hydrogenColor, oxygenColor, nitrogenColor, chlorineColor, bromineColor]
@@ -189,17 +191,31 @@ let bondHighlight = (e) => {
     };
 }
 
-drawAtom = (e, i) => {
+let drawAtom = (e, i) => {
 
-    ctx.font = "15px Montserrat"
+    ctx.font = `${atomTypeArray[i].radius}px Montserrat`
     ctx.fillStyle = atomTypeArray[i].color;
     ctx.beginPath();
     ctx.arc(e.clientX - canvas.getBoundingClientRect().left, e.clientY - canvas.getBoundingClientRect().top, atomTypeArray[i].radius, 0, 2 * Math.PI);
     ctx.fill();
     ctx.fillStyle = "white";
-    ctx.fillText(atomTypeArray[i].type, e.clientX - 6 - canvas.getBoundingClientRect().left, e.clientY + 5 - canvas.getBoundingClientRect().top);
+    ctx.fillText(atomTypeArray[i].type, e.clientX - 0.38 * atomTypeArray[i].radius - canvas.getBoundingClientRect().left, e.clientY + 0.35 * atomTypeArray[i].radius - canvas.getBoundingClientRect().top);
 
 }
+
+let redrawAtom = (p) => {
+
+    ctx.font = `${p.radius}px Montserrat`
+    ctx.fillStyle = p.color;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.fillStyle = "white";
+    ctx.fillText(p.type, p.x - 0.38 * p.radius, p.y + 0.35 * p.radius);
+
+}
+
+
 
 drawBorder = (e) => {
 
@@ -231,54 +247,65 @@ let pairCos = () => { return Math.cos(Math.atan(pairSlope())) };
 
 
 
-let pairSinAdd = () => { return Math.sin(Math.atan(pairSlope()) + (Math.PI / 3)) };
-let pairCosAdd = () => { return Math.cos(Math.atan(pairSlope()) + (Math.PI / 3)) };
+let pairSinAdd = () => { return Math.sin(Math.atan(pairSlope()) + Math.PI / 6) };
+let pairCosAdd = () => { return Math.cos(Math.atan(pairSlope()) + Math.PI / 6) };
 
-let pairSinSubtr = () => { return Math.sin(Math.atan(pairSlope()) - (Math.PI / 3)) };
-let pairCosSubtr = () => { return Math.cos(Math.atan(pairSlope()) - (Math.PI / 3)) };
+let pairSinSubtr = () => { return Math.sin(Math.atan(pairSlope()) - Math.PI / 6) };
+let pairCosSubtr = () => { return Math.cos(Math.atan(pairSlope()) - Math.PI / 6) };
 
 
-let drawSinglebond = () => {
+
+
+let drawSingleBond = () => {
+
     ctx.beginPath();
     if (pair[0].x > pair[1].x) {
         ctx.moveTo(pair[0].x - pair[0].radius * pairCos(), pair[0].y - pair[0].radius * pairSin());
-        ctx.lineTo(pair[1].x + pair[0].radius * pairCos(), pair[1].y + pair[0].radius * pairSin());
+        ctx.lineTo(pair[1].x + pair[1].radius * pairCos(), pair[1].y + pair[1].radius * pairSin());
     } else {
         ctx.moveTo(pair[0].x + pair[0].radius * pairCos(), pair[0].y + pair[0].radius * pairSin());
-        ctx.lineTo(pair[1].x - pair[0].radius * pairCos(), pair[1].y - pair[0].radius * pairSin());
+        ctx.lineTo(pair[1].x - pair[1].radius * pairCos(), pair[1].y - pair[1].radius * pairSin());
     }
     ctx.stroke();
+
 }
-
-
 
 let drawDoubleBond = () => {
 
-    ctx.beginPath();
-    if (pair[0].x < pair[1].x) {
-
+    if (pair[0].x > pair[1].x) {
+        ctx.beginPath();
         ctx.moveTo(pair[0].x + pair[0].radius * pairCosSubtr(), pair[0].y + pair[0].radius * pairSinSubtr());
-        ctx.lineTo(pair[1].x + 3 + (pair[1].radius) * Math.cos((Math.acos(pairCosSubtr())) + (Math.PI / 2) + 0.4), pair[1].y + (pair[1].radius) * Math.sin((Math.asin(pairSinSubtr())) - (Math.PI / 2) + 0.45));
+        ctx.lineTo(pair[1].x + pair[0].radius * pairCosSubtr(), pair[1].y + pair[0].radius * pairSinSubtr());
+        ctx.stroke();
 
+        redrawAtom(pair[0]);
     } else {
-        ctx.moveTo(pair[0].x + 3 + pair[0].radius * Math.cos((Math.acos(pairCosSubtr())) + (Math.PI / 2) + 0.4), pair[0].y + pair[0].radius * Math.sin((Math.asin(pairSinSubtr())) - (Math.PI / 2) + 0.45));
-        ctx.lineTo(pair[1].x + pair[1].radius * pairCosSubtr(), pair[1].y + pair[1].radius * pairSinSubtr());
+        ctx.beginPath();
+        ctx.moveTo(pair[0].x + pair[0].radius * pairCosSubtr(), pair[0].y + pair[0].radius * pairSinSubtr());
+        ctx.lineTo(pair[1].x + pair[0].radius * pairCosSubtr(), pair[1].y + pair[0].radius * pairSinSubtr());
+        ctx.stroke();
+
+        redrawAtom(pair[1]);
     }
-    ctx.stroke();
 
 
-    ctx.beginPath();
-    if (pair[0].x < pair[1].x) {
+
+    if (pair[0].x > pair[1].x) {
+        ctx.beginPath();
         ctx.moveTo(pair[0].x + pair[0].radius * pairCosAdd(), pair[0].y + pair[0].radius * pairSinAdd());
-        ctx.lineTo(pair[1].x + pair[1].radius * Math.cos((Math.acos(pairCosAdd())) + (Math.PI / 2) - 0.4), pair[1].y + pair[1].radius * Math.sin((Math.asin(pairSinAdd())) + (Math.PI / 2) - 0.4));
+        ctx.lineTo(pair[1].x + pair[0].radius * pairCosAdd(), pair[1].y + pair[0].radius * pairSinAdd());
+        ctx.stroke();
+
+        redrawAtom(pair[0]);
     } else {
-        ctx.moveTo(pair[0].x + pair[0].radius * Math.cos((Math.acos(pairCosAdd())) + (Math.PI / 2) - 0.4), pair[0].y + pair[0].radius * Math.sin((Math.asin(pairSinAdd())) + (Math.PI / 2) - 0.4));
-        ctx.lineTo(pair[1].x + pair[1].radius * pairCosAdd(), pair[1].y + pair[1].radius * pairSinAdd());
+        ctx.beginPath();
+        ctx.moveTo(pair[0].x + pair[0].radius * pairCosAdd(), pair[0].y + pair[0].radius * pairSinAdd());
+        ctx.lineTo(pair[1].x + pair[0].radius * pairCosAdd(), pair[1].y + pair[0].radius * pairSinAdd());
+        ctx.stroke();
+
+        redrawAtom(pair[1]);
     }
-    ctx.stroke();
 }
-
-
 
 let drawbonds = (i) => {
 
@@ -287,19 +314,25 @@ let drawbonds = (i) => {
 
     if (i == 1) {
 
-        drawSinglebond();
+        drawSingleBond();
         pairpop();
     }
 
     if (i == 2) {
+
         drawDoubleBond();
+
         pairpop();
     }
 
     if (i == 3) {
-        drawSinglebond();
+
+        drawSingleBond();
         drawDoubleBond();
+
         pairpop();
+
+
     }
 }
 
@@ -361,6 +394,11 @@ deleteAll.addEventListener("click", () => {
     pair = [];
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // for(i=0; i<atomArray.length; i++){
+    //     atomArray.pop();
+    // }
+    // location.reload();
 
 })
 
