@@ -23,6 +23,13 @@ font-family: 'Montserrat', sans-serif;
     --chlorineColor: #726FA3;
     --bondlineColor:whitesmoke;
     --bondlinePreviewColor: whitesmoke;
+    
+        --carbonColor : #33B3FF;
+    --hydrogenColor : #C4C415;
+    --nitrogenColor: #EC6784;
+    --oxygenColor: #00BD0B;
+    --bromineColor: #CCA937;
+    --chlorineColor: #726FA3;
 
 
 }
