@@ -1,6 +1,4 @@
 
-// const express = require ("express");
-// const app = express();
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 const canvasWindow = document.querySelector(".canvasWindow");
