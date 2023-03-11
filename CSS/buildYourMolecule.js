@@ -576,7 +576,7 @@ formulaString="";
 })   
 
 
-
+validateButton.href = `#`;
 
 
 
