@@ -393,6 +393,8 @@ deleteAll.addEventListener("click", ()=>{
     for(i=0; i<atomArray.length; i++){
         atomArray.pop();
     }
+  pairpop();
+  
 //     location.reload();
 
 })
