@@ -383,19 +383,14 @@ if(atom.active==true){
 
 deleteAll.addEventListener("click", ()=>{
 
-//     names="";
-//     ElementnameCountArray=[];
-//     nameCount = 0;
-//       formulaString ="";
+  names="";
+    ElementnameCountArray=[];
+    nameCount = 0;
+    formulaString ="";
+    atomArray= [];
+    pair=[];
 
-//     ctx.clearRect(0,0,canvas.width, canvas.height);
-
-//     for(i=0; i<atomArray.length; i++){
-//         atomArray.pop();
-//     }
-//   pairpop();
-  
-    location.reload();
+    ctx.clearRect(0,0,canvas.width, canvas.height);
 
 })
 
