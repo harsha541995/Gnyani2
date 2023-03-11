@@ -392,6 +392,7 @@ deleteAll.addEventListener("click", () => {
     formulaString = "";
     atomArray = [];
     pair = [];
+    validateButton.href = `#`;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
