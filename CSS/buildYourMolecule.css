@@ -1,15 +1,15 @@
-*{
-margin:0;
-padding: 0;
-box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
 }
 
-body{
+body {
 
-width: 100vw;
-height: 100vh;
-font-family: 'Montserrat', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -21,11 +21,11 @@ font-family: 'Montserrat', sans-serif;
     --oxygenColor: #3EE85C;
     --bromineColor: #E8953E;
     --chlorineColor: #726FA3;
-    --bondlineColor:whitesmoke;
+    --bondlineColor: whitesmoke;
     --bondlinePreviewColor: whitesmoke;
-    
-        --carbonColor : #33B3FF;
-    --hydrogenColor : #C4C415;
+
+    --carbonColor: #33B3FF;
+    --hydrogenColor: #C4C415;
     --nitrogenColor: #EC6784;
     --oxygenColor: #00BD0B;
     --bromineColor: #CCA937;
@@ -37,7 +37,7 @@ font-family: 'Montserrat', sans-serif;
 
 
 
-.header{
+.header {
     height: 60px;
     background-color: #00579c;
     display: flex;
@@ -46,146 +46,151 @@ font-family: 'Montserrat', sans-serif;
 }
 
 
-.headerText{
+.headerText {
 
-flex-grow: 1;
-display: flex;
-justify-content: center;
-color: whitesmoke;
-font-size: 20px;
-font-family: 'Montserrat', sans-serif;
-letter-spacing: 3px;
-
-}
-
-
-.homeIcon{
-
-height: 40px;   
-margin-left: 23px; 
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
 
 }
 
-.homeIcon img{
+
+.homeIcon {
+
+    height: 40px;
+    margin-left: 23px;
+
+}
+
+.homeIcon img {
     height: 100%;
 }
 
 
-main{
+main {
 
-width: 90%;
-height: 60%;
-margin: 60px auto;
-border: 1px solid #00579c;
-display: flex;
-
-}
-
-.bondWindow{
-width: 50px;
-border-right: 2px solid #00579c ;
-margin: 20px 0;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-align-items: center;
-}
-
-.bond{
-padding: 8px 0;
-border-radius: 5px;   
-background-color: #00579c;
-width: 35px;
-height: 35px; 
-color: whitesmoke;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-align-items: center;
+    width: 90%;
+    height: 60%;
+    margin: 60px auto;
+    border: 1px solid #00579c;
+    display: flex;
 
 }
 
-.bondline{
-
-width: 60%;
-height: 2px;
-background-color: whitesmoke;
-
-}
-
-
-
-
-
-
-
-.elementWindow{
+.bondWindow {
     width: 50px;
-    border-right: 2px solid #00579c ;
+    border-right: 2px solid #00579c;
     margin: 20px 0;
     display: flex;
     flex-direction: column;
-justify-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bond {
+    padding: 8px 0;
+    border-radius: 5px;
+    background-color: #00579c;
+    width: 35px;
+    height: 35px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
 }
 
-.canvasWindow{
-flex-grow: 1;
+.bondline {
+
+    width: 60%;
+    height: 2px;
+    background-color: whitesmoke;
 
 }
 
 
-.element{
 
-height: 10%;
-width: 50%;
-font-size: 15px;
-display: flex;
-align-items: center;
-justify-content: center;
+
+
+
+
+.elementWindow {
+    width: 50px;
+    border-right: 2px solid #00579c;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
 }
 
-.element:not(:first-child){
-    margin: 10% auto;    
+.canvasWindow {
+    flex-grow: 1;
+
 }
 
-.element:first-child{
+
+.element {
+
+    height: 10%;
+    width: 50%;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.element:not(:first-child) {
+    margin: 10% auto;
+}
+
+.element:first-child {
     margin: 0 auto;
 }
 
 
-.carbon{
+.carbon {
     background-color: var(--carbonColor);
     color: whitesmoke;
     /* border: 2px solid var(--carbonColor); */
     border-radius: 10px;
 }
 
-.hydrogen{
+.hydrogen {
     background-color: var(--hydrogenColor);
     color: whitesmoke;
     /* border: 2px solid var(--hydrogenColor); */
     border-radius: 10px;
 }
-.nitrogen{
+
+.nitrogen {
     background-color: var(--nitrogenColor);
     color: whitesmoke;
     /* border: 2px solid var(--nitrogenColor); */
     border-radius: 10px;
 }
-.oxygen{
+
+.oxygen {
     background-color: var(--oxygenColor);
     color: whitesmoke;
     /* border: 2px solid var(--oxygenColor); */
     border-radius: 10px;
 }
-.chlorine{
+
+.chlorine {
     background-color: var(--chlorineColor);
     color: whitesmoke;
     /* border: 2px solid var(--chlorineColor); */
     border-radius: 10px;
 }
-.bromine{
+
+.bromine {
     background-color: var(--bromineColor);
     color: whitesmoke;
     /* border: 2px solid var(--bromineColor); */
@@ -212,7 +217,7 @@ justify-content: center;
 } */
 
 
-.buttons{
+.buttons {
 
     width: 50%;
     height: 5%;
@@ -221,134 +226,137 @@ justify-content: center;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
-    }
-    
-    .button{
-    
-        padding: 8px 25px;
-        font-size: 12px;
-        font-family: inherit;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        border-radius: 10px;
-        border: none;
-        color: whitesmoke;
-        box-shadow: 2px 5px 10px rgba(0,0,0, 0.3);
-        transition: all 0.2s;
-    }
-    
-    .button:hover{
-        box-shadow: 5px 5px 10px rgba(0,0,0, 0.5);
-        transform: translateY(-2px);
-    }
-    
-    .button:active{
-        box-shadow: 1px 2px 10px rgba(0,0,0, 0.5);
-        transform: translateY(0);
-    }
-    
-    
-    
-    .button:focus{
-        outline: none;
-    }
-    
-    .validate, .select{
-        background-color: #00579c;
-        text-decoration: none;
-    }
-    
-    .delete ,.deleteAll{
-       background-color:  #ff3232 ;
-    }
-    
-    
+
+}
+
+.button {
+
+    padding: 8px 25px;
+    font-size: 12px;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    border: none;
+    color: whitesmoke;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+}
+
+.button:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.button:active {
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(0);
+}
+
+
+
+.button:focus {
+    outline: none;
+}
+
+.validate,
+.select {
+    background-color: #00579c;
+    text-decoration: none;
+}
+
+.delete,
+.deleteAll {
+    background-color: #ff3232;
+}
 
 
 
 
-    .displayequation{
-
-        width: 90%;
-        margin: 40px auto;
-        display: block;
-        text-align: center;
-        border: 1px solid #00579c;
-        height: 60px;
-        font-family: 'Montserrat', sans-serif;
-        padding: 15px;
-        font-size: 20px;
-    
-    }
 
 
-    .details{
+.displayequation {
 
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        width: 90%;
-        margin: 30px auto;
-        border: 1px solid #00579c;
-      }
-    
-    
-    
-    .details>div{
-        min-width: 300px;
-        height: 100px;
-    
-    }
+    width: 90%;
+    margin: 40px auto;
+    display: block;
+    text-align: center;
+    border: 1px solid #00579c;
+    height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px;
+    font-size: 20px;
+
+}
+
+
+.details {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: 30px auto;
+    border: 1px solid #00579c;
+}
+
+
+
+.details>div {
+    min-width: 300px;
+    height: 100px;
+
+}
 
 
 @media (min-height:1000px) {
 
-    .header{
+    .header {
         height: 80px;
         font-size: 28px;
         letter-spacing: 8px;
 
     }
 
-    .homeIcon{
+    .homeIcon {
 
-        height: 40px;}
+        height: 40px;
+    }
 
 }
 
 @media (max-width:700px) and (max-height:800px) {
 
-    .header{
+    .header {
         font-size: 15px;
         letter-spacing: 3px;
 
     }
 
-    .headerText{
+    .headerText {
 
         font-size: 15px;
 
     }
 
-    .homeIcon{
+    .homeIcon {
 
         height: 25px;
-        margin-left: 10px; 
+        margin-left: 10px;
     }
 
 }
 
 
-@media (min-width:750px){
-    .bondWindow{
+@media (min-width:750px) {
+    .bondWindow {
         width: 70px;
-        }
-        
-        .elementWindow{
-            width: 70px;
-        
-        }
+    }
+
+    .elementWindow {
+        width: 70px;
+
+    }
 }
 
 
@@ -360,79 +368,79 @@ justify-content: center;
 
 
 
-@media (max-width:900px){
+@media (max-width:900px) {
 
-    main{
+    main {
         flex-direction: column;
         height: 80%;
     }
 
-    .homeIcon{
+    .homeIcon {
 
         height: 25px;
-        margin-left: 10px; 
+        margin-left: 10px;
     }
 
-    .bondWindow{
+    .bondWindow {
 
         width: 90%;
         height: 70px;
-        border-bottom:1px solid #00579c ;
+        border-bottom: 1px solid #00579c;
         border-right: none;
         margin: 0 auto;
-        flex-direction:row ;
+        flex-direction: row;
 
-        
-        }
-        
-        .elementWindow{
-            width: 90%;
-            height: 70px;
-            border-bottom:1px solid #00579c ;
-            border-right: none;
-            margin: 0 auto;    
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;   
-        }
 
-        .element{
-            width: 12%; 
-            height: 50%;
-            font-size: 15px;
-            margin: 0;    
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        
-            }
-            
     }
 
+    .elementWindow {
+        width: 90%;
+        height: 70px;
+        border-bottom: 1px solid #00579c;
+        border-right: none;
+        margin: 0 auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
 
+    .element {
+        width: 12%;
+        height: 50%;
+        font-size: 15px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
+    }
 
-
-    
-@media (max-width:900px)  and (min-height:1000px){
-
-.bondWindow{
-
-    height: 100px;
 }
 
-.elementWindow{
 
-    height: 100px;
+
+
+
+
+@media (max-width:900px) and (min-height:1000px) {
+
+    .bondWindow {
+
+        height: 100px;
+    }
+
+    .elementWindow {
+
+        height: 100px;
+
+    }
 
 }
 
-}
-
-@media (max-width:700px){
-.buttons{
-    flex-direction: column;
-    height: 20%;
-}
+@media (max-width:700px) {
+    .buttons {
+        flex-direction: column;
+        height: 20%;
+    }
 
 }
