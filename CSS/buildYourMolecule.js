@@ -26,10 +26,10 @@ let nameCount = 0;
 
 let carbonColor = "#33B3FF";
 let hydrogenColor = "#C4C415";
-let nitrogenColor = "#FF9AA2";
-let oxygenColor = "#3EE85C";
-let bromineColor = "#E8953E";
-let chlorineColor = "#726FA3";
+let nitrogenColor= "#EC6784";
+let oxygenColor= "#00BD0B";
+let bromineColor= "#CCA937";
+let chlorineColor= "#726FA3";
 let themeColor = "#00579c";
 let bondColor = "#ADD8E6";
 bondColor = "#338BA8";
