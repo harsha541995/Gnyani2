@@ -386,13 +386,14 @@ deleteAll.addEventListener("click", ()=>{
     names="";
     ElementnameCountArray=[];
     nameCount = 0;
+      formulaString ="";
 
     ctx.clearRect(0,0,canvas.width, canvas.height);
 
     for(i=0; i<atomArray.length; i++){
         atomArray.pop();
     }
-    location.reload();
+//     location.reload();
 
 })
 
