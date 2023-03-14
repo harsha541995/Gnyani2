@@ -103,6 +103,7 @@ display: inline-block;
 width: 260px;
 padding: 15px ;
 font-size: 18px; 
+border-bottom: 1px solid #00579c;
 /* transition: all 0.3s; */
 }
 
@@ -123,18 +124,23 @@ ul, li, a{
   height: 0;
   width: 0;
   font-size: 0; 
+  border-bottom: none;
+
 }
 
 .menu_li:hover + ul>li>a{
   height: 50px;
   width: 260px;
   font-size: 18px; 
+  border-bottom: 1px solid #00579c;
+
 }
 
 .menu_li+ul>li>a:hover{
   height: 50px;
   width: 260px;
   font-size: 18px; 
+
 }
 
 .menu_li:hover + ul{
