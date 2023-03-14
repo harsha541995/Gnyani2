@@ -87,7 +87,7 @@ a{
   transform: translate(-50%, -50%);
   list-style: none;
   display: block;
-  width: 50%;
+  width: 260px;
   text-align: center;
   z-index: 3; 
 transition: all 0.3s;
