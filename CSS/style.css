@@ -103,8 +103,7 @@ display: inline-block;
 width: 260px;
 padding: 15px ;
 font-size: 18px; 
- transition: all 0.3s;
-border-bottom : 1px solid #00579c;
+/* transition: all 0.3s; */
 }
 
 ul, li, a{
@@ -114,6 +113,7 @@ ul, li, a{
 
 .menu_li+ul{
   height: 0;
+  list-style: none;
 }
 .menu_li+ul>li{
   height: 0;
@@ -122,22 +122,19 @@ ul, li, a{
 .menu_li+ul>li>a{
   height: 0;
   width: 0;
-  font-size: 0;
-  border:none;
+  font-size: 0; 
 }
 
 .menu_li:hover + ul>li>a{
   height: 50px;
   width: 260px;
-  font-size: 18px;
-border-bottom : 1px solid #00579c;
+  font-size: 18px; 
 }
 
 .menu_li+ul>li>a:hover{
   height: 50px;
   width: 260px;
   font-size: 18px; 
-border-bottom : 1px solid #00579c;
 }
 
 .menu_li:hover + ul{
