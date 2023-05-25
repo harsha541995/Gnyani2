@@ -64,15 +64,13 @@ minAmp = 0;
 
 
 
-var grd = "#00579c";
-// var grd = "#203354";
-// var grd = "#182547";
+// var grd = "#00579c";
 
 
-// ctx.createLinearGradient(0, 0, 0, canvas.height);
+var grd = ctx.createLinearGradient(0, 0, 0, canvas.height);
 
-// grd.addColorStop(0, "#00579c");
-// grd.addColorStop(0.8, "#03acc1");
+grd.addColorStop(0, "#00579c");
+grd.addColorStop(0.8, "#03acc1");
 
 
 class Point{
