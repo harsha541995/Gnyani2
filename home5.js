@@ -77,9 +77,6 @@ class Point{
     constructor(x,y){
 this.x=x;
 this.y=y;
-// this.A =  minAmp + 130*Math.random();
-// this.w= 0.0001*(1+Math.random());
-// this.k= 2*Math.PI/waveLength;
 this.size = (0.5+1*Math.random())*(radius);
 this.velocityY = -1+ 2*Math.random();
 this.ix;
