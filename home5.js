@@ -40,7 +40,7 @@ const Y = 0.005*height;
 let ballArray = [];
 let ballColor= "white";
 let lineColor="";
-let ballCount= 200;
+let ballCount= 180;
 
 
 let radius = 0.5*H;
